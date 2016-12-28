@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "566986800543",
+    "firebase_url": "https://on-lineschool-f838c.firebaseio.com",
+    "project_id": "on-lineschool-f838c",
+    "storage_bucket": "on-lineschool-f838c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566986800543:android:b00ce0f8b764ddc1",
+        "android_client_info": {
+          "package_name": "com.example.android.on_lineschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566986800543-he8ook0e2h1eqhbj5h8lqetsrq8egir7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.on_lineschool",
+            "certificate_hash": "CF5DF9453221E844D0672BE2FB7BC11AD96B5C74"
+          }
+        },
+        {
+          "client_id": "566986800543-9ohiqkjpjnn5l3r86bar97gjlcm3a6q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc8hKvQ-e-j1RP4ipUp54R5YAD0ooCmhg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566986800543-9ohiqkjpjnn5l3r86bar97gjlcm3a6q6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
