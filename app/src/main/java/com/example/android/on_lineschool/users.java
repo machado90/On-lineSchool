@@ -6,25 +6,28 @@ package com.example.android.on_lineschool;
 
 public class users {
     private String display_name;
-    private String profile_pic;
+    private String pic;
     private String type;
+
 
     public users() {
     }
 
     public users(String profile_pic, String display_name, String type) {
-        this.profile_pic = profile_pic;
+        this.pic = pic;
         this.display_name = display_name;
         this.type = type;
     }
 
-    public String getProfile_pic() {
-        return profile_pic;
+    public users(String pic) {
+        this.pic = pic;
     }
 
-    public void setProfile_pic(String profile_pic) {
-        this.profile_pic = profile_pic;
-    }
+    public String getProfile_pic() { return pic;}
+
+    public void setPic (String pic){this.pic = pic;}
+
+
 
     public String getDisplay_name() {
         return display_name;

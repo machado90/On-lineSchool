@@ -16,28 +16,28 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainPageActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     // Write a message to the database
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
     List<users> lista;
     users usuario;
     String user_uid;
+    String emailreg;
+    ImageView pic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,6 +46,7 @@ public class MainPageActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         user_uid = getIntent().getStringExtra("uid");
+        emailreg = getIntent().getStringExtra("Email");
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,9 +79,23 @@ public class MainPageActivity extends AppCompatActivity
                 for (DataSnapshot d:
                      dataSnapshot.getChildren()) {
                     if(user_uid.contentEquals(d.getKey())){
+
                         users u = d.getValue(users.class);
+
+                        TextView email = (TextView) findViewById(R.id.emailprofile);
+                        email.setText(emailreg);
+
                         TextView name = (TextView) findViewById(R.id.tituloprofile);
                         name.setText(u.getDisplay_name());
+
+                        pic = (ImageView) findViewById(R.id.userprofilepic);
+
+                        Picasso.with(getApplicationContext()).load(u.getProfile_pic()).into(pic);
+/*
+                        if(pic != null){
+                               pic.setImageResource(u.getProfile_pic());
+                        }
+*/
 
                     }
                 }
@@ -92,11 +107,7 @@ public class MainPageActivity extends AppCompatActivity
                 Log.w("Read database", "Failed to read value.", error.toException());
             }
         });
-        ImageView v = (ImageView) findViewById(R.id.userprofilepic);
 
-        if(v != null){
-         //   v.setImageResource();
-        }
 
     }
 
