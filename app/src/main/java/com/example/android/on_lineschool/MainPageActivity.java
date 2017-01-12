@@ -90,13 +90,12 @@ public class MainPageActivity extends AppCompatActivity
 
                         pic = (ImageView) findViewById(R.id.userprofilepic);
 
-                        Picasso.with(getApplicationContext()).load(u.getProfile_pic()).into(pic);
-/*
-                        if(pic != null){
-                               pic.setImageResource(u.getProfile_pic());
-                        }
-*/
-
+                        Picasso.with(getApplicationContext())
+                                .load(u.getPic())
+                                .placeholder(R.drawable.geral)   // optional
+                                .error(R.drawable.erropic)      // optional
+                                .resize(100,100)                        // optional
+                                .into(pic);
                     }
                 }
             }

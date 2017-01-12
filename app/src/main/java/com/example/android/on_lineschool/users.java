@@ -13,20 +13,17 @@ public class users {
     public users() {
     }
 
-    public users(String profile_pic, String display_name, String type) {
-        this.pic = pic;
+    public users(String pic, String display_name, String type) {
         this.display_name = display_name;
+        this.pic = pic;
         this.type = type;
     }
 
-    public users(String pic) {
-        this.pic = pic;
-    }
 
-    public String getProfile_pic() { return pic;}
+
+    public String getPic(){ return pic;}
 
     public void setPic (String pic){this.pic = pic;}
-
 
 
     public String getDisplay_name() {
